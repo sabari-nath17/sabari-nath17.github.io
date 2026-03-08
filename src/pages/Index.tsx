@@ -18,7 +18,19 @@ const workFocus = [
   { title: "Operational Automation", desc: "Software systems that improve workflow efficiency and decision-making." },
 ];
 
-const skills = [
+const technicalSkills = [
+  "C Programming",
+  "Python",
+  "Java",
+  "R",
+  "Data Structures & Algorithms",
+  "Machine Learning",
+  "AI System Design",
+  "API Integration",
+  "Google Cloud Platform",
+];
+
+const otherSkills = [
   "Marketing & Product Positioning",
   "Business Management",
   "Communication",
@@ -105,10 +117,10 @@ const Index = () => {
           <SectionLabel>About</SectionLabel>
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
-              I design and build practical AI-powered systems that integrate machine learning with real operational workflows — technology that functions as <strong className="text-foreground/80">reliable infrastructure</strong> rather than isolated prototypes.
+              I design and build practical AI-powered systems that integrate machine learning, data science, and statistical modeling with real operational workflows — technology that functions as <strong className="text-foreground/80">reliable infrastructure</strong> rather than isolated prototypes.
             </p>
             <p>
-              Alongside engineering, I study business strategy, product development, and operational management — approaching technology from both a technical and business perspective.
+              Alongside engineering, I study business strategy, product development, and operational management — approaching technology from both a technical and business perspective. This includes research documentation and technical analysis of economic and data-driven systems.
             </p>
             <p>
               Currently pursuing <strong className="text-foreground/80">BCA in Artificial Intelligence</strong> while independently building software products and startup ideas.
@@ -139,11 +151,26 @@ const Index = () => {
 
         <hr className="my-14 border-border" />
 
-        {/* Skills — compact tag layout for quick scanning */}
+        {/* Skills — structured with technical + non-technical */}
         <Section>
           <SectionLabel>Skills &amp; Interests</SectionLabel>
+
+          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground/60">Technical</p>
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-wrap gap-2">
-            {skills.map((s) => (
+            {technicalSkills.map((s) => (
+              <motion.span
+                key={s}
+                variants={fade}
+                className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+              >
+                {s}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <p className="mb-3 mt-6 text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground/60">Interests &amp; Other</p>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-wrap gap-2">
+            {otherSkills.map((s) => (
               <motion.span
                 key={s}
                 variants={fade}
